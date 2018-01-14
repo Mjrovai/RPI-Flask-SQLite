@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
-#  appDHT_v1.py
+#  appDhtWebServer.py
 #  
 #  Created by MJRoBot.org 
 #  10Jan18
 
 '''
-	RPi WEb Server for DHT captured data  
+	RPi Web Server for DHT captured data  
 '''
 
 from flask import Flask, render_template, request
