@@ -22,12 +22,6 @@ import sqlite3
 conn=sqlite3.connect('../sensorsData.db')
 curs=conn.cursor()
 
-global numSamples
-
-#numSamples = maxRowsTable()
-#if (numSamples > 101):
-numSamples = 100
-
 # Retrieve LAST data from database
 def getLastData():
 	for row in curs.execute("SELECT * FROM DHT_data ORDER BY timestamp DESC LIMIT 1"):
@@ -55,6 +49,12 @@ def maxRowsTable():
 		maxNumberRows=row[0]
 	return maxNumberRows
 
+#initialize global variables
+global numSamples
+numSamples = maxRowsTable()
+if (numSamples > 101):
+	numSamples = 100
+	
 	
 # main route 
 @app.route("/")
